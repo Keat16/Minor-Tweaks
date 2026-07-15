@@ -1,0 +1,217 @@
+//------------Sonic CD Metal Sonic Script-------------//
+//--------Scripted by Christian Whitehead 'The Taxman'--------//
+//-------Unpacked By Rubberduckycooly's Script Unpacker-------//
+
+//-------Aliases-------//
+#alias 52: TYPE_AMY
+
+sub ObjectMain
+	Object.DrawOrder=5
+	//Spawn Point
+	TempValue3=0
+	TempValue3-=32
+	TempValue3<<=16
+	//despawn point
+	TempValue1= Screen.XSize
+	TempValue1+=32
+	TempValue1<<=16
+	//Center
+	TempValue6=Object[34].Xpos
+	TempValue6-=917504
+	//TempValue6<<=16
+	//Jump
+	TempValue7=172
+	TempValue7<<=16
+	switch Object.State
+	case 0
+		Object.Xpos=TempValue3
+		Object.Ypos=TempValue7
+		Object.Frame=4
+		break
+	case 1
+		Object.Xpos=Screen.CenterX
+		Object.Xpos-=16
+		Object.Xpos<<=16
+		Object.Ypos=172
+		Object.Ypos<<=16
+		Object.Direction=FACING_RIGHT
+		Object.Frame=2
+		
+		Object.Value0++
+		if Object.Value0>41
+			CreateTempObject(TypeName[LoveHeart],0,Object.XPos,Object.YPos)
+			Object[TempObjectPos].iYPos-=6
+			Object[TempObjectPos].InkEffect=2
+			Object[TempObjectPos].Alpha=255
+			Object.Value0=0
+		endif
+		
+		break
+	case 2
+		Object.Value6++
+		switch Object.Frame
+		case 4
+		case 6
+			if Object.Value6==4
+				Object.Value6=0
+				Object.Frame++
+			endif
+			break
+		case 5
+		case 7
+			if Object.Value6==3
+				Object.Value6=0
+				Object.Frame++
+			endif
+			break
+		endswitch
+		if Object.Frame>7
+			Object.Frame=4
+		endif
+		Object.Xpos+=131072
+		Object.Direction=FACING_RIGHT
+		TempValue0=TempValue6
+		TempValue0-=655360
+		if Object.Xpos>TempValue0
+			Object.Frame=9
+			Object.State++
+		endif
+		break
+	case 3
+		if Object.Xpos>TempValue6
+			Object.Frame=8
+			Object.Value0++
+		else
+			Object.Xpos+=65536
+		endif
+		break
+	case 4
+		Object.Value1++
+		Object.Value6++
+		if Object.Value6==8
+			Object.Value6=0
+			Object.Frame++
+		endif
+		if Object.Frame>10
+			Object.Frame=9
+		endif
+		Object.YPos+=Object.Value2
+		if Object[34].XPos<Object.Xpos
+			Object.Direction=FACING_LEFT
+		endif
+		if Object.Ypos<TempValue7
+			Object.Value2+=10240
+		else
+			if Object.Value1<120
+				Object.Value2=-245760
+			else
+				Object.Value1=0
+				Object[33].State=2
+				Object.Frame=0
+				Object.State++
+			endif
+		endif
+		break
+	case 5
+		Object.Value1++
+		Object.Value6++
+		if Object.Value6==12
+			Object.Value6=0
+			Object.Frame++
+		endif
+		if Object.Frame>3
+			Object.Frame=0
+		endif
+		Object.Direction=FACING_RIGHT
+		if Object.Value1>60
+			Object.Value1=0
+			Object.Value6=0
+			Object.Frame=4
+			Object.State++
+		endif
+		break
+	case 6
+		Object.Value6++
+		switch Object.Frame
+		case 4
+		case 6
+			if Object.Value6==4
+				Object.Value6=0
+				Object.Frame++
+			endif
+			break
+		case 5
+		case 7
+			if Object.Value6==3
+				Object.Value6=0
+				Object.Frame++
+			endif
+			break
+		endswitch
+		if Object.Frame>7
+			Object.Frame=4
+		endif
+		Object.XPos+=131072
+		if Object.Xpos>TempValue1
+			Object.State=0
+		endif 
+		break
+	endswitch
+	if Stage.PlayerListPos==0
+		if Object.Value0>41
+			CreateTempObject(TypeName[LoveHeart],0,Object.XPos,Object.YPos)
+			Object[TempObjectPos].iYPos-=6
+			Object[TempObjectPos].InkEffect=2
+			Object[TempObjectPos].Alpha=255
+			Object.Value0=0
+		endif
+	end if
+endsub
+
+
+
+sub ObjectDraw
+	if Stage.PlayerListPos==0
+		if Object.State>0
+			DrawSpriteFX(Object.Frame,FX_FLIP,Object.XPos,Object.YPos)
+		endif
+	end if
+endsub
+
+
+sub ObjectStartup
+	Object.Priority=3	// ??? no slot reference, this should do nothing
+	
+	LoadSpriteSheet("Secrets/Congrats.gif")
+	
+	SpriteFrame(-11, -18, 22, 40, 281, 613)		// waiting 0
+	SpriteFrame(-11, -18, 22, 40, 304, 613)
+	SpriteFrame(-11, -18, 22, 40, 281, 613)
+	SpriteFrame(-11, -18, 22, 40, 258, 613)
+	SpriteFrame(-15, -18, 30, 40, 173, 613)		// walking 4
+	SpriteFrame(-10, -18, 21, 40, 173, 654)
+	SpriteFrame(-13, -18, 26, 40, 204, 613)
+	SpriteFrame(-10, -18, 21, 40, 173, 654)
+	SpriteFrame(-12, -18, 25, 40, 147, 613)		// hugging 8
+	SpriteFrame(-13, -18, 26, 40, 231, 613)		// jumping 9
+	SpriteFrame(-12, -18, 24, 40, 195, 654)		// hugging 10
+	SpriteFrame(-12, -18, 22, 40, 124, 613)		// looking 11
+	SpriteFrame(-12, -18, 22, 40, 124, 613)
+	SpriteFrame(-12, -18, 22, 40, 124, 613)
+	SpriteFrame(-12, -18, 22, 40, 124, 613)
+	SpriteFrame(-12, -18, 22, 40, 124, 613)
+	SpriteFrame(-14, -18, 25, 40, 98, 613)
+	SpriteFrame(-14, -18, 25, 40, 98, 613)
+	SpriteFrame(-14, -18, 25, 40, 98, 613)
+	SpriteFrame(-12, -18, 22, 40, 124, 613)
+	SpriteFrame(-12, -18, 22, 40, 124, 613)
+	SpriteFrame(-12, -18, 22, 40, 124, 613)
+	SpriteFrame(-14, -18, 25, 40, 98, 613)
+	SpriteFrame(-14, -18, 25, 40, 98, 613)
+	SpriteFrame(-14, -18, 25, 40, 98, 613)		// 24
+endsub
+
+sub RSDK
+	LoadSpriteSheet("Global/Display.gif")
+	SetEditorIcon(Icon0,SingleIcon,-16,-16,32,32,1,143)
+endsub

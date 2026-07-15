@@ -1,0 +1,349 @@
+{
+  "Groups": [
+    {
+      "Name": "Main",
+      "DisplayName": "Sonic 1",
+      "Elements": [
+        {
+          "Name": "IncludeDir1",
+          "Description": [
+            "Select what moveset will be used for Anniversary Mode."
+          ],
+          "DisplayName": "Anniversary Moveset",
+          "Type": "S1moveset",
+          "DefaultValue": ".\\Config\\S1\\moveset\\vanilla\\"
+        }
+      ]
+    },
+	{
+      "Name": "Main",
+      "DisplayName": "Sonic CD",
+      "Elements": [
+        {
+          "Name": "IncludeDir3",
+          "Description": [
+            "Select what moveset will be used for Anniversary Mode."
+          ],
+          "DisplayName": "Anniversary Moveset",
+          "Type": "SCDmoveset",
+          "DefaultValue": ".\\Config\\SCD\\moveset\\vanilla\\"
+        },
+		{
+          "Name": "IncludeDir4",
+          "Description": [
+            "Skips the Time Travel Cutscene in Anniversary Mode."
+          ],
+          "DisplayName": "Instant Time Warp",
+          "Type": "SCDinstaWarp",
+          "DefaultValue": ".\\Config\\SCD\\instaWarp\\off\\"
+        },
+		{
+          "Name": "IncludeDir6",
+          "Description": [
+            "Enables the original sprites for NPC Amy from Classic Mode in Anniversary Mode."
+          ],
+          "DisplayName": "Original NPC Amy sprites",
+          "Type": "SCDnpcAmy",
+          "DefaultValue": "."
+        },
+		{
+          "Name": "SCDroll",
+          "Description": [
+            "Adds the Roll SFX from the other games."
+          ],
+          "DisplayName": "Roll SFX",
+          "Type": "bool",
+          "DefaultValue": false
+        }
+      ]
+    },
+	{
+      "Name": "Main",
+      "DisplayName": "Sonic 2",
+      "Elements": [
+        {
+          "Name": "IncludeDir2",
+          "Description": [
+            "Select what moveset will be used for Anniversary Mode."
+          ],
+          "DisplayName": "Anniversary Moveset",
+          "Type": "S2moveset",
+          "DefaultValue": ".\\Config\\S2\\moveset\\vanilla\\"
+        }
+      ]
+    },
+	{
+      "Name": "Main",
+      "DisplayName": "Misc.",
+      "Elements": [
+        {
+          "Name": "IncludeDir5",
+          "Description": [
+            "Skips the Sonic Team intro video."
+          ],
+          "DisplayName": "Skip Sonic Team intro",
+          "Type": "skipST",
+          "DefaultValue": "."
+        }
+      ]
+	}
+  ],
+  "Enums": {
+    "S1moveset": [
+      {
+        "DisplayName": "Vanilla",
+        "Value": ".\\Config\\S1\\moveset\\vanilla\\",
+        "Description": [
+          "Vanilla Anniversary Mode moveset."
+        ]
+      },
+	    {
+        "DisplayName": "No Drop Dash",
+        "Value": ".\\Config\\S1\\moveset\\noDD\\",
+        "Description": [
+          "Anniversary Mode moveset with Drop Dash disabled."
+        ]
+      },
+	    {
+        "DisplayName": "No Drop Dash + no Spin Dash",
+        "Value": ".\\Config\\S1\\moveset\\noDDnoSpin\\",
+        "Description": [
+          "Anniversary Mode moveset with Drop Dash and Spin Dash disabled."
+        ]
+      },
+	    {
+        "DisplayName": "2013",
+        "Value": ".\\Config\\S1\\moveset\\2013\\",
+        "Description": [
+          "2013 Mobile version moveset.",
+		  "",
+		  "-Drop Dash disabled",
+		  "-Roll Jump Lock"
+        ]
+      },
+      {
+        "DisplayName": "Classic Mode",
+        "Value": ".\\Config\\S1\\moveset\\classic\\",
+        "Description": [
+          "Classic Mode moveset.",
+		  "",
+		  "-Drop Dash disabled",
+		  "-Spin Dash disabled",
+		  "-Air Speed Cap",
+		  "-Ground Speed Cap",
+		  "-Roll Jump Lock"
+        ]
+      },
+  	  {
+        "DisplayName": "Classic Mode + Spindash",
+        "Value": ".\\Config\\S1\\moveset\\classicSpin\\",
+        "Description": [
+          "Classic Mode moveset with Spin Dash enabled.",
+		  "",
+		  "-Drop Dash disabled",
+		  "-Spin Dash",
+		  "-Air Speed Cap",
+		  "-Ground Speed Cap",
+		  "-Roll Jump Lock"
+        ]
+      },
+	   {
+        "DisplayName": "Insta-Shield",
+        "Value": ".\\Config\\S1\\moveset\\instashield\\",
+        "Description": [
+          "Anniversary Mode moveset with Insta-Shield enabled."
+        ]
+      },
+	    {
+        "DisplayName": "Max Control",
+        "Value": ".\\Config\\S1\\moveset\\max\\",
+        "Description": [
+          "Max Control.",
+		  "",
+		  "-Drop Dash",
+		  "-Spin Dash",
+		  "-Peel Out",
+		  "-Insta Shield"
+        ]
+      }
+    ],
+	"SCDmoveset": [
+      {
+        "DisplayName": "Vanilla",
+        "Value": ".\\Config\\SCD\\moveset\\vanilla\\",
+        "Description": [
+          "Vanilla Anniversary Mode moveset."
+        ]
+      },
+      {
+        "DisplayName": "Vanilla + No Speed Cap",
+        "Value": ".\\Config\\SCD\\moveset\\vanillaNoCap\\",
+        "Description": [
+          "Vanilla Anniversary Mode moveset with Air Speed Cap disabled for CD Spindash."
+        ]
+      },
+  	  {
+        "DisplayName": "Vanilla + Speed Cap",
+        "Value": ".\\Config\\SCD\\moveset\\vanillaCap\\",
+        "Description": [
+          "Vanilla Anniversary Mode moveset with Air Speed Cap enabled for S2 Spindash."
+        ]
+      },
+  	  {
+        "DisplayName": "No Drop Dash",
+        "Value": ".\\Config\\SCD\\moveset\\noDD\\",
+        "Description": [
+          "Anniversary Mode moveset with Drop Dash disabled."
+        ]
+      },
+  	  {
+        "DisplayName": "No Drop Dash + No Speed Cap",
+        "Value": ".\\Config\\SCD\\moveset\\noDDNoCap\\",
+        "Description": [
+          "Anniversary Mode moveset with Drop Dash disabled and Air Speed Cap disabled for CD Spindash."
+        ]
+      },
+      {
+        "DisplayName": "No Drop Dash + Speed Cap",
+        "Value": ".\\Config\\SCD\\moveset\\noDDCap\\",
+        "Description": [
+          "Anniversary Mode moveset with Drop Dash disabled and Air Speed Cap enabled for S2 Spindash."
+        ]
+      },
+	    {
+        "DisplayName": "Max Control",
+        "Value": ".\\Config\\SCD\\moveset\\max\\",
+        "Description": [
+          "Anniversary Mode moveset with Insta-Shield enabled."
+        ]
+      },
+      {
+        "DisplayName": "Max Control + No Speed Cap",
+        "Value": ".\\Config\\SCD\\moveset\\maxNoCap\\",
+        "Description": [
+          "Anniversary Mode moveset with Insta-Shield enabled and Air Speed Cap disabled for CD Spindash."
+        ]
+      },
+	    {
+        "DisplayName": "Max Control + Speed Cap",
+        "Value": ".\\Config\\SCD\\moveset\\maxCap\\",
+        "Description": [
+          "Anniversary Mode moveset with Insta-Shield enabled and Air Speed Cap enabled for S2 Spindash."
+        ]
+      }
+    ],
+    "SCDinstaWarp": [
+      {
+        "DisplayName": "Vanilla/Off",
+        "Value": ".\\Config\\SCD\\instaWarp\\off\\",
+        "Description": [
+          ""
+        ]
+      },
+  	  {
+        "DisplayName": "On",
+        "Value": ".\\Config\\SCD\\instaWarp\\on\\",
+        "Description": [
+          "Enables Instant Time Warp with a custom SFX",
+		  "",
+		  "Place this mod above other SFX mods."
+        ]
+      },
+	    {
+        "DisplayName": "On (no SFX)",
+        "Value": ".\\Config\\SCD\\instaWarp\\onNoSFX\\",
+        "Description": [
+          "Enables Instant Time Warp with no SFX for compatibility with SFX mods."
+        ]
+      }
+    ],
+	"SCDnpcAmy": [
+      {
+        "DisplayName": "Vanilla/Off",
+        "Value": ".",
+        "Description": [
+          ""
+        ]
+      },
+	    {
+        "DisplayName": "On",
+        "Value": ".\\Config\\SCD\\npcAmy\\",
+        "Description": [
+          ""
+        ]
+      }
+    ],
+    "S2moveset": [
+      {
+        "DisplayName": "Vanilla",
+        "Value": ".\\Config\\S2\\moveset\\vanilla\\",
+        "Description": [
+          "Vanilla Anniversary Mode moveset."
+        ]
+      },
+	    {
+        "DisplayName": "No Drop Dash",
+        "Value": ".\\Config\\S2\\moveset\\noDD\\",
+        "Description": [
+          "Anniversary Mode moveset with Drop Dash disabled."
+        ]
+      },
+  	  {
+        "DisplayName": "2013",
+        "Value": ".\\Config\\S2\\moveset\\2013\\",
+        "Description": [
+          "2013 Mobile version moveset.",
+		  "",
+		  "-Drop Dash disabled",
+		  "-Roll Jump Lock"
+        ]
+      },
+      {
+        "DisplayName": "Classic Mode",
+        "Value": ".\\Config\\S2\\moveset\\classic\\",
+        "Description": [
+          "Classic Mode moveset.",
+		  "",
+		  "-Drop Dash disabled",
+		  "-Air Speed Cap",
+		  "-Roll Jump Lock"
+        ]
+      },
+  	  {
+        "DisplayName": "Insta-Shield",
+        "Value": ".\\Config\\S2\\moveset\\instashield\\",
+        "Description": [
+          "Anniversary Mode moveset with Insta-Shield enabled."
+        ]
+      },
+	    {
+        "DisplayName": "Max Control",
+        "Value": ".\\Config\\S2\\moveset\\max\\",
+        "Description": [
+          "Max Control.",
+		  "",
+		  "-Drop Dash",
+		  "-Peel Out",
+		  "-Insta Shield"
+        ]
+      }
+    ],
+    "skipST": [
+      {
+        "DisplayName": "Vanilla/Off",
+        "Value": ".",
+        "Description": [
+          ""
+        ]
+      },
+	    {
+        "DisplayName": "On",
+        "Value": ".\\Config\\skipST\\",
+        "Description": [
+          ""
+        ]
+      }
+    ]
+  },
+  "IniFile": "mod.ini"
+}

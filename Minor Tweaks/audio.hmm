@@ -1,0 +1,31 @@
+Code "minor tweaks audio"
+//
+    #lib "AudioRedirection"
+	#lib "HMM"
+	
+	static bool modInitialized = false;
+	static bool SCDroll;
+//
+{		
+	if (!modInitialized)
+	{
+		var mod = HMM.GetModByID("minortweaksultrafix");
+        if (mod == null)
+        {
+            Console.WriteLine($"[Minor Tweaks (Ultrafix)] Failed to locate mod directory.");
+            return;
+        }
+        else
+        {
+			string modConfigIniPath = System.IO.Path.Combine(mod.Path, "mod.ini");
+			var configINI = INI.Read(modConfigIniPath);
+			SCDroll = bool.Parse(configINI["Main"]["SCDroll"]);
+			modInitialized = true;
+			
+			if (SCDroll) {
+				AudioRedirection.AddSoundReplacement(RSDK.Game.SonicCD, "Global/Roll", "SFX_BE_Rolling");
+			}
+			AudioRedirection.AddSoundReplacement(RSDK.Game.SonicCD, "Global/InstaTimeWarp", "SFX_SCD_F75");
+		}
+	}
+}
